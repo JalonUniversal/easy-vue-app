@@ -1,29 +1,22 @@
+const baseBuildConfig = require('./webpack.base.js');
+const merge = require('webpack-merge');
+const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-module.exports = {
-  entry: './src/main.js',
-  output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: "[name].[hash:8].js"
-  },
-  module: {
-    rules: [
-      {
-        test: /\.vue$/,
-        exclude: /node_modules/,
-        loader: "vue-loader"
-      }
-    ]
-  },
-  resolve: {
-    extensions: ['.vue', '.js']
-  },
+const devConfig = merge(baseBuildConfig, {
+  mode: 'development',
+  devtool: 'inline-source-map',
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../public/index.html')
-    }),
-    new VueLoaderPlugin()
-  ]
-}
+    new webpack.HotModuleReplacementPlugin(),
+  ],
+  devServer: {
+    hot: true,
+    port: 3000,
+    open: true,
+    quiet: true,
+    compress: true,
+    contentBase: path.resolve(__dirname, '../public')
+  }
+});
+
+module.exports = devConfig;
