@@ -1,0 +1,29 @@
+{
+  "name": "easy_vue_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config ./build/webpack.dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JalonUniversal/easy-vue-app.git"
+  },
+  "author": "JalonUniversal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JalonUniversal/easy-vue-app/issues"
+  },
+  "homepage": "https://github.com/JalonUniversal/easy-vue-app#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^4.5.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.0.0"
+  },
+  "dependencies": {
+    "vue": "^2.6.12",
+    "vue-loader": "^15.9.3",
+    "vue-template-compiler": "^2.6.12"
+  }
+}
