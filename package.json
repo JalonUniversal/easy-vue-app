@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config ./build/webpack.dev.js"
+    "dev": "webpack-dev-server --config ./build/webpack.dev.js",
+    "build": "webpack --config ./build/webpack.base.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,10 @@
   "homepage": "https://github.com/JalonUniversal/easy-vue-app#readme",
   "devDependencies": {
     "html-webpack-plugin": "^4.5.0",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^4.0.0"
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {
     "vue": "^2.6.12",
